@@ -1,0 +1,56 @@
+Дадена е еднострано поврзана листа од цели броеви. Истата треба да се трансформира за да ги задоволува условите да биде цик-цак секвенца. Односно, после секој позитивен број да следува негативен и обратно, и не треба да содржи нули. Ова треба да се направи со тоа што ќе се измине листата и за секој пар од последователни елементи ќе се направи следното:
+
+    Доколку и двата елементи се позитивни, се брише вториот.
+    Доколку и двата елементи се негативни, меѓу нив се вметнува нов елемент со вредност што ќе биде апсолутната вредност на првиот.
+    Доколку било кој од елементите е 0, се брише истиот (доколку и 2та се 0, треба да се избришат и 2та елементи).
+
+Забелешка 1: Празна листа или листа од само 1 елемент сама по себе е цик-цак секвенца.
+
+Забелешка 2: Не треба да менувате во main функцијата, туку само во void makeZigZag(SLL<Integer> list).
+
+Влез: Во првата линија е даден бројот на елементи во оригиналната листа, а потоа во следната линија се дадени самите елменти одделени со празно место.
+
+Излез: Прво се печати оригиналната листа, па потоа и трансформираната цик-цак листа.
+
+Пример:
+
+Влез:
+
+8
+
+4 -3 -6 0 7 7 -2 5
+
+Излез:
+
+4 -> -3 -> -6 -> 0 -> 7 -> 7 -> -2 -> 5
+
+4 -> -3 -> 3-> -6 -> 7 -> -2 -> 5
+
+/
+
+Given a single linked list of integers, you should transform it so that it is a zig-zag sequence. That means that after every positive element a negative element should follow, and vice versa. Additionally, the list shouldn't contain any 0's. This transformation needs to be made by iterating the list and doing the following for each pair of consecutive elements:
+
+    If both elements are positive, delete the second one.
+    If both elements are negative, insert a new element between them, containing the absolute value of the first one.
+    If the any of the elements is 0, it should be deleted (if both elements are 0, both should be deleted).
+
+Note 1: An empty list or a list containing of only 1 element is a zig-zag sequence by itself.
+
+Note 2: You shouldn't make any changes in the main function, but only in void makeZigZag(SLL<Integer> list).
+
+Input: In the first line the number of elements in the list is given, and then in the next line the elements themselves, separated by spaces.
+Output: First the original list is printed, then the transformed zig-zag list.
+
+Example:
+
+Input:
+
+8
+
+4 -3 -6 0 7 7 -2 5
+
+Output:
+
+4 -> -3 -> -6 -> 0 -> 7 -> 7 -> -2 -> 5
+
+4 -> -3 -> 3-> -6 -> 7 -> -2 -> 5

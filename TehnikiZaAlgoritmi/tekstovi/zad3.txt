@@ -1,0 +1,30 @@
+Дадени се N задачи кои треба да се изработат. За секоја од задачите го знаеме времето за изработка (во часови) и заработката која ја носи. Да се најде максималната заработка во рок од една 40 часовна работна недела. Напомена дека и делумно сработени задачи носат делумна заработка, во зависност од процентот на завршеност.
+
+Влез: Првиот број од влезот е бројот на задачи N, а потоа во следниот ред времетраењето на задачата во часови и заработката која ја носи.
+
+
+
+Излез: Максимална заработка која можеме да ја направиме за 40 часа.
+
+/
+
+We are given N tasks with estimated completion time and the amount we can earn from that task. Write an algorithm that finds the maximum earnings we can have for 40 hours. Note that we can have a partial earning from a partially completed task.
+
+Input: The first number in the input is the number of tasks N, then in the next N lines are the time needed for the task and the amount of money we can earn from it.
+
+Output: The maximum amount we can earn in 40 hours
+
+
+
+For example:
+
+Input	Result
+3
+10 60
+20 100
+30 120
+200
+
+1
+10 60
+60
