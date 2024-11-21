@@ -23,19 +23,19 @@ public class ZigZag2 {
 
         rez.add(lista.get(0));
 
-        boolean opagacki = true;
+        boolean rastecki = true;
 
         for (int i = 1; i <lista.size() ; i++) {
             int prev = rez.getLast();
             int curr = lista.get(i);
 
-            if(opagacki && curr>prev){
+            if(rastecki && curr>prev){
                 rez.add(curr);
-                opagacki=false;
+                rastecki=false;
             }
-            else if(!opagacki && curr<prev){
+            else if(!rastecki && curr<prev){
                 rez.add(curr);
-                opagacki=true;
+                rastecki=true;
             }
         }
         return rez;
