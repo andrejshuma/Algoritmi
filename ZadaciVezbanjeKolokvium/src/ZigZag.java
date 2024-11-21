@@ -24,8 +24,7 @@ public class ZigZag {
         while(prev.element==0)
         {
             list.delete(prev);
-            if(prev.succ!=null)
-                prev=prev.succ;
+            if(prev.succ!=null) prev=prev.succ;
             else break;
         }
         SLLNode<Integer> node=prev.succ;
