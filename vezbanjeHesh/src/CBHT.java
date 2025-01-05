@@ -1,4 +1,4 @@
- class CBHT<K extends Comparable<K>, E> {
+public class CBHT<K extends Comparable<K>, E> {
 
     // An object of class CBHT is a closed-bucket hash table, containing
     // entries of class MapEntry.
@@ -75,12 +75,5 @@
             temp += "\n";
         }
         return temp;
-    }
-}
-
-
-public class Main{
-    public static void main(String[] args) {
-
     }
 }
