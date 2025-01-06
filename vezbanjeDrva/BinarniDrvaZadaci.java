@@ -12,30 +12,31 @@ public class BinarniDrvaZadaci {
             String [] input = scanner.nextLine().split(" ");
             String command = input[0];
 
-            if(command.equals("root")){
-                tree.makeRoot(input[1]);
-                map.put(input[1],tree.root);
-            }
-            else if(command.equals("add")){
-                String parentValue = input[1];
-                BNode<String> parentNode = map.get(parentValue);
-                if(parentNode!=null){
-                    String childValue = input[2];
-                    String direction = input[3];
-                    int where = direction.equals("LEFT") ? 1 : 2;
-                    map.put(childValue,tree.addChild(parentNode,where,childValue));
+            switch (command) {
+                case "root" -> {
+                    tree.makeRoot(input[1]);
+                    map.put(input[1], tree.root);
                 }
-            }
-            else if(command.equals("ask")){
-                String nodeValue = input[1];
-                BNode<String> NODE = map.get(nodeValue);
-                if(NODE!=null){
-                    //System.out.println(countInside(NODE));
-                    //System.out.println(twoChildren(NODE));
-                    //System.out.println(maxDepth(NODE));
-                    System.out.println(sumDegrees(NODE));
+                case "add" -> {
+                    String parentValue = input[1];
+                    BNode<String> parentNode = map.get(parentValue);
+                    if (parentNode != null) {
+                        String childValue = input[2];
+                        String direction = input[3];
+                        int where = direction.equals("LEFT") ? 1 : 2;
+                        map.put(childValue, tree.addChild(parentNode, where, childValue));
+                    }
                 }
-
+                case "ask" -> {
+                    String nodeValue = input[1];
+                    BNode<String> NODE = map.get(nodeValue);
+                    if (NODE != null) {
+                        System.out.println(countInside(NODE));
+                        System.out.println(twoChildren(NODE));
+                        System.out.println(maxDepth(NODE));
+                        System.out.println(sumDegrees(NODE));
+                    }
+                }
             }
         }
     }
