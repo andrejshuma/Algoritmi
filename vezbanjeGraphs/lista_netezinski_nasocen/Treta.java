@@ -1,26 +1,36 @@
 package lista_netezinski_nasocen;
+
 import java.util.*;
-public class DedoMraz {
+
+public class Treta {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
         int numVertex = scanner.nextInt();
         int numEdges = scanner.nextInt();
-        scanner.nextLine();
 
         AdjacencyListGraph<Integer> graph = new AdjacencyListGraph<>();
 
-        for (int i = 0; i <numEdges ; i++) {
-            String [] line = scanner.nextLine().split(" ");
-            graph.addEdge(Integer.parseInt(line[0]), Integer.parseInt(line[1]));
+        for (int i = 0; i <numVertex ; i++) {
+            graph.addVertex(i);
         }
-         int startVertex = scanner.nextInt();
+
+        for (int i = 0; i <numEdges ; i++) {
+            graph.addEdge(scanner.nextInt(), scanner.nextInt());
+        }
+
+        int L = scanner.nextInt();
+        graph.removeVertex(L);
 
         Set<Integer> visited = new HashSet<>();
+        int groups = 0;
 
-        dfs(startVertex,visited,graph);
-        System.out.println(visited.size()-1);
-
-
+        for (Integer s : graph.getAdjacencyList().keySet()) {
+            if (!visited.contains(s)) {
+                dfs(s,visited,graph);
+                groups++;
+            }
+        }
+        System.out.println(groups);
     }
     private static void dfs(Integer vertex, Set<Integer> visited, AdjacencyListGraph<Integer> graph) {
         visited.add(vertex);

@@ -66,6 +66,9 @@ public class AdjacencyListGraph<T> {
 		}
 	}
 
+	public Map<T, Set<T>> getAdjacencyList() {
+		return adjacencyList;
+	}
 
 	public void DFSNonRecursive(T startVertex) {
 		Set<T> visited = new HashSet<>();
@@ -177,5 +180,6 @@ public class AdjacencyListGraph<T> {
 			ret += vertex.getKey() + ": " + vertex.getValue() + "\n";
 		return ret;
 	}
+
 
 }
