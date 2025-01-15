@@ -32,7 +32,7 @@ public class AdjacencyListGraph<T> {
 		addVertex(destination);
 
 		adjacencyList.get(source).put(destination, weight);
-		adjacencyList.get(destination).put(source, weight); // for undirected graph
+		//adjacencyList.get(destination).put(source, weight); // for undirected graph
 	}
 
 	// Remove an edge from the graph
@@ -40,9 +40,9 @@ public class AdjacencyListGraph<T> {
 		if (adjacencyList.containsKey(source)) {
 			adjacencyList.get(source).remove(destination);
 		}
-		if (adjacencyList.containsKey(destination)) {
-			adjacencyList.get(destination).remove(source); // for undirected graph
-		}
+//		if (adjacencyList.containsKey(destination)) {
+//			adjacencyList.get(destination).remove(source); // for undirected graph
+//		}
 	}
 
 	// Get all neighbors of a vertex
