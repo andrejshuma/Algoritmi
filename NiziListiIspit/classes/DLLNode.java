@@ -1,8 +1,8 @@
 package classes;
 
 public class DLLNode<E> {
-    protected E element;
-    protected DLLNode<E> pred, succ;
+    public E element;
+    public DLLNode<E> pred, succ;
     public DLLNode(E elem, DLLNode<E> pred, DLLNode<E> succ) {
         this.element = elem;
         this.pred = pred;
