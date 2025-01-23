@@ -1,3 +1,4 @@
+import java.sql.SQLOutput;
 import java.util.*;
 
 public class Kolokviumska {
@@ -9,7 +10,6 @@ public class Kolokviumska {
         BTree<Integer> tree = new BTree<>();
         HashMap<Integer, BNode<Integer>> mapa = new HashMap<>();
 
-        float rez = 0;
         for (int i = 0; i < n + q; i++) {
             String[] token = scanner.nextLine().split(" ");
             switch (token[0]) {
@@ -30,11 +30,11 @@ public class Kolokviumska {
                 case "ask" -> {
                     Integer childVal = Integer.parseInt(token[1]);
                     BNode<Integer> node = mapa.get(childVal);
-                    rez = BFS(node, 1);
+                    System.out.println(BFS(node, 1));
                 }
             }
         }
-        System.out.println(rez);
+
     }
 
     public static float BFS(BNode<Integer> root, int level) {
