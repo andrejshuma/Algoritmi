@@ -24,7 +24,7 @@ public class ListaOdListi {
             listaOdListi.insertLast(lista);
         }
 
-        int rez = 1;
+        long rez = 1;
 
         DLLNode<Integer> curr = sums.getFirst();
 
