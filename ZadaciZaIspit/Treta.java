@@ -114,6 +114,7 @@ public class Treta {
         int n=word.length();
         int freq=Integer.MIN_VALUE;
         String najden="";
+
         for (int i=0;i<n;i++){
             for (int j=0;j<n-i;j++){
                 String w=word.substring(j,j+i+1);
@@ -126,15 +127,15 @@ public class Treta {
                 int m=tabela.search(w).element.value;
                 if(m>freq){
                     freq=m;
-                    najden=tabela.search(w).element.key;
+                    najden=w;
                 }
                 else if(m==freq){
-                    if(tabela.search(najden).element.key.length()<tabela.search(w).element.key.length()){
-                        najden=tabela.search(w).element.key;
+                    if(najden.length()<w.length()){
+                        najden=w;
                     }
-                    else if(tabela.search(najden).element.key.length()==tabela.search(w).element.key.length()){
-                        if(tabela.search(najden).element.key.compareTo(tabela.search(w).element.key)>0){
-                            najden=tabela.search(w).element.key;
+                    else if(najden.length()==w.length()){
+                        if(najden.compareTo(w)>0){
+                            najden=w;
                         }
                     }
 
@@ -142,7 +143,5 @@ public class Treta {
             }
         }
         System.out.println(najden);
-
-
     }
 }
